@@ -1,45 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-</head>
-<body>
-    <header></header>
+  <head>
+    <!-- 
+      Objective: To design and develop a responsive landing page using HTML and CSS.
+      Use Case: This page can be used as a landing for a product or service.
+    -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platinum Digital Services</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      header {
+        background: #333;
+        color: #fff;
+        padding: 10px 60px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        margin-right: 10px;
+      }
+      header h5 {
+        font-size: 0.8em;
+      }
+      header nav {
+        display: flex;
+        justify-content: center;
+        font-size: 0.8em;
+      }
+      .hero {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding: 40px 60px;
+        background: #f4f4f4;
+        height: 85vh;
+      }
+      .hero-text {
+        flex: 1;
+        text-align: left;
+      }
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+      }
+      .hero h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #333;
+        line-height: 1.4;
+      }
+      .hero p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        color: #666;
+        width: 90%;
+      }
+      .hero button {
+        padding: 10px 20px;
+        font-size: 1em;
+        background: #28436b;
+        border-radius: 5px;
+        font-weight: normal;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.3s ease;
+        border: 1px solid #28436b;
+      }
+      .hero button:hover {
+        background: #3b5a8a;
+        color: #fff;
+      }
+      .hero button:active {
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      .section-features {
+        background: #fff;
+        padding: 40px 70px;
+        min-height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .features {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90%;
+        background: #fff;
+        flex-wrap: wrap;
+      }
+      .features div {
+        background: #f4f4f4;
+        padding: 40px;
+        border-radius: 5px;
+        height: 500px;
+        text-align: center;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .features img {
+        height: 45px;
+        width: 45px;
+        margin-bottom: 10px;
+      }
+      .features h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .features p {
+        font-size: 1em;
+        color: #666;
+      }
+      footer {
+        background: #333;
+        color: #fff;
+        padding: 50px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .contact {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+      }
+      .contact div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.8em;
+      }
+      .contact img {
+        width: 40px;
+        height: 40px;
+      }
+      .copyright {
+        font-size: 0.8em;
+        color: #ccc;
+      }
+
+      footer p {
+        font-size: 0.8em;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 1024px) {
+        header {
+          padding: 10px 30px;
+        }
+        header h5 {
+          font-size: 0.7em;
+        }
+        header nav {
+          font-size: 0.7em;
+        }
+
+        .hero h1 {
+          font-size: 1.5em;
+        }
+        .hero p {
+          font-size: 1em;
+        }
+        .hero button {
+          font-size: 0.9em;
+        }
+        .section-features {
+          padding: 20px;
+          min-height: auto;
+          padding: 40px 40px;
+        }
+
+        .features div {
+          width: 30%;
+          height: 300px;
+          padding: 20px;
+        }
+        .features h2 {
+          font-size: 1.2em;
+        }
+        .features p {
+          font-size: 0.7em;
+        }
+        .features img {
+          width: 50px;
+          height: 50px;
+        }
+        footer p {
+          font-size: 0.8em;
+        }
+      }
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 1.2em;
+        }
+        .hero p {
+          font-size: 0.9em;
+        }
+        .hero button {
+          font-size: 0.8em;
+        }
+        .section-features {
+          padding: 20px;
+        }
+        .features div {
+          width: 95%;
+          margin-bottom: 20px;
+        }
+        .features img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      @media (max-width: 480px) {
+        header {
+          flex-direction: column;
+          align-items: center;
+        }
+        header h1 {
+          font-size: 1.5em;
+        }
+        header nav {
+          flex-direction: column;
+        }
+        .hero {
+          padding: 50px 20px;
+          flex-direction: column-reverse;
+          height: auto;
+        }
+        .hero h1 {
+          font-size: 1.5em;
+        }
+        .hero p {
+          font-size: 1.2em;
+        }
+        .hero button {
+          font-size: 0.9em;
+        }
+        .section-features {
+          padding: 20px;
+        }
+        .features {
+          flex-direction: column;
+          align-items: center;
+        }
+        .features div {
+          width: 95%;
+          height: auto;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+        .features img {
+          width: 50px;
+          height: 50px;
+        }
+        .features h2 {
+          font-size: 1.5em;
+        }
+        .features p {
+          font-size: 0.9em;
+        }
+        footer p {
+          font-size: 0.8em;
+        }
+        footer a {
+          font-size: 0.8em;
+        }
+        footer .contact {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        footer .contact div {
+          margin-bottom: 10px;
+        }
+        footer .contact img {
+          width: 30px;
+          height: 30px;
+        }
+        footer .contact a {
+          font-size: 0.8em;
+        }
+        footer .copyright {
+          font-size: 0.7em;
+          text-align: center;
+          padding-left: 40px;
+        }
+      }
+      @media (max-width: 320px) {
+        header h1 {
+          font-size: 1.2em;
+        }
+        .hero h1 {
+          font-size: 1.5em;
+        }
+        .hero p {
+          font-size: 1em;
+        }
+      }
+      @media (max-width: 240px) {
+        header h1 {
+          font-size: 1em;
+        }
+        .hero h1 {
+          font-size: 1.2em;
+        }
+        .hero p {
+          font-size: 0.8em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          width="44"
+          height="44"
+          src="https://img.icons8.com/cotton/64/network-care--v1.png"
+          alt="network-care--v1"
+        />
+        <h5>Platinum Digital Services</h5>
+      </div>
+      <nav>
+        <ul style="list-style: none; display: flex; justify-content: center">
+          <li style="margin: 0 15px">Home</li>
+          <li style="margin: 0 15px">Services</li>
+          <li style="margin: 0 15px">Contact</li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- Hero -->
-    <section>
-        <div>
-            <h1>headline</h1>
-            <p>subheadline</p>
-            <button>Learn More...</button>
-        </div>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Delivering High-Impact Software Solutions That Drive Growth</h1>
+        <p>
+          We build robust, scalable, and maintainable software applications that
+          help your business thrive.
+        </p>
+        <button>Learn More...</button>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdHVZ_Rlkey07PWMjENMhjRIaPywa1JZa44Q&s"
+          alt=""
+        />
+      </div>
     </section>
 
     <!-- Feature -->
-     <section>
+    <section class="section-features">
+      <div class="features">
         <div>
-            <img src="" alt="">
-            <h2>Feature 1</h2>
-            <p>Feature 1 description</p>
+          <img
+            width="64"
+            height="64"
+            src="https://img.icons8.com/cotton/64/web-design--v2.png"
+            alt="web-design--v2"
+          />
+          <h2>Web Design</h2>
+          <p>
+            Our web design process focuses on understanding your audience and
+            business goals, ensuring a seamless and engaging experience that
+            drives results.
+          </p>
         </div>
         <div>
-            <img src="" alt="">
-            <h2>Feature 2</h2>
-            <p>Feature 2 description</p>
+          <img
+            width="64"
+            height="64"
+            src="https://img.icons8.com/external-laconic-inipagistudio/64/external-App-Development-programming-tools-laconic-inipagistudio.png"
+            alt="external-App-Development-programming-tools-laconic-inipagistudio"
+          />
+          <h2>App Development</h2>
+          <p>
+            We transform your ideas into cutting-edge mobile and web
+            applications that deliver exceptional user experiences.
+          </p>
         </div>
         <div>
-            <img src="" alt="">
-            <h2>Feature 3</h2>
-            <p>Feature 3 description</p>
+          <img
+            width="64"
+            height="64"
+            src="https://img.icons8.com/dusk/64/online-order.png"
+            alt="online-order"
+          />
+          <h2>E-commerce</h2>
+          <p>
+            We build robust and user-friendly e-commerce platforms that are
+            designed to maximize your online sales.
+          </p>
         </div>
-     </section>
+      </div>
+    </section>
 
-     <!-- Footer -->
-      <footer>
-        <div>contact</div>
-        <p>copyright</p>
-      </footer>
-</body>
+    <!-- Footer -->
+    <footer>
+      <div class="logo">
+        <img
+          width="44"
+          height="44"
+          src="https://img.icons8.com/cotton/64/network-care--v1.png"
+          alt="network-care--v1"
+        />
+        <h5>Platinum Digital Services</h5>
+      </div>
+
+      <div class="contact">
+        <div>
+          <img
+            width="100"
+            height="100"
+            src="https://img.icons8.com/carbon-copy/100/new-post--v1.png"
+            alt="new-post--v1"
+          />
+          <a href="mailto:starafolab@gmail.com">starafolab@gmail.com</a>
+        </div>
+
+        <div>
+          <img
+            width="45"
+            height="50"
+            src="https://img.icons8.com/dotty/50/phone-disconnected.png"
+            alt="phone-disconnected"
+          />
+          <a href="tel:+2347046564023">+234 704 656 4023</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>2025. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>
